@@ -1,2 +1,2 @@
-kubectl delete svc productcatalogservice
+kubectl delete svc b-productcatalogservice
 kubectl create -f manifest-svc.yaml

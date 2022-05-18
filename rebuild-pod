@@ -1,2 +1,2 @@
-kubectl delete deployment productcatalogservice
+kubectl delete deployment b-productcatalogservice
 kubectl create -f manifest-pod.yaml
