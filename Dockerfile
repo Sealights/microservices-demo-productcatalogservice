@@ -18,13 +18,7 @@ RUN apk add build-base
 
 WORKDIR /src
 # restore dependencies
-COPY go.mod go.sum ./
-RUN go mod download
-COPY . .
-
-# Skaffold passes in debug-oriented compiler flags
-ARG SKAFFOLD_GO_GCFLAGS
-RUN go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /productcatalogservice .
+COPY productcatalogservice ./
 
 FROM alpine AS release
 RUN apk add --no-cache ca-certificates
@@ -32,7 +26,7 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.4.7 && \
     wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 && \
     chmod +x /bin/grpc_health_probe
 WORKDIR /src
-COPY --from=builder /productcatalogservice ./server
+#COPY --from=builder /productcatalogservice ./server
 COPY products.json .
 
 # Definition of this variable is used by 'skaffold debug' to identify a golang binary.
@@ -41,5 +35,6 @@ COPY products.json .
 ENV GOTRACEBACK=single
 
 EXPOSE 3550
-ENTRYPOINT ["/src/server"]
+#ENTRYPOINT ["/src/server"]
+ENTRYPOINT ["productcatalogservice"]
 
