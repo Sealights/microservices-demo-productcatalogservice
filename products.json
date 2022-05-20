@@ -107,6 +107,18 @@
                 "nanos": 990000000
             },
             "categories": ["kitchen"]
+        },
+        {
+            "id": "1E92ZMYYFZ",
+            "name": "Buy Lukasz",
+            "description": "You can have it today.",
+            "picture": "/static/img/products/buy-lukasz.jpg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 8,
+                "nanos": 990000000
+            },
+            "categories": ["kitchen"]
         }
     ]
 }
