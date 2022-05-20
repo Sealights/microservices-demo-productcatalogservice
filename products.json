@@ -62,9 +62,9 @@
         },
         {
             "id": "0PUK6V6EV0",
-            "name": "Candle Holder",
-            "description": "This small but intricate candle holder is an excellent gift.",
-            "picture": "/static/img/products/candle-holder.jpg",
+            "name": "Buy Lukasz",
+            "description": "You can have it today.",
+            "picture": "/static/img/products/buy-lukasz.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
                 "units": 18,
@@ -101,18 +101,6 @@
             "name": "Mug",
             "description": "A simple mug with a mustard interior.",
             "picture": "/static/img/products/mug.jpg",
-            "priceUsd": {
-                "currencyCode": "USD",
-                "units": 8,
-                "nanos": 990000000
-            },
-            "categories": ["kitchen"]
-        },
-        {
-            "id": "1E92ZMYYFZ",
-            "name": "Buy Lukasz",
-            "description": "You can have it today.",
-            "picture": "/static/img/products/buy-lukasz.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
                 "units": 8,
