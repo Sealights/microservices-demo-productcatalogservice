@@ -35,6 +35,13 @@ ENV LATEST_COMMIT ${LATEST_COMMIT}
 ENV PR_NUMBER ${PR_NUMBER}
 ENV TARGET_REPO_URL ${TARGET_REPO_URL}
 
+RUN echo "========================================================="
+RUN echo "targetBranch: ${TARGET_BRANCH}"
+RUN echo "latestCommit: ${LATEST_COMMIT}"
+RUN echo "pullRequestNumber ${PR_NUMBER}"
+RUN echo "repositoryUrl ${TARGET_REPO_URL}"
+RUN echo "========================================================="
+
 COPY . .
 
 # Skaffold passes in debug-oriented compiler flags
