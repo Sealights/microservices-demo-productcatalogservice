@@ -54,7 +54,7 @@ RUN if [[ $IS_PR -eq 0 ]]; then \
     BUILD_NAME=$(date +%F_%T) && ./slcli config create-bsid --app "productcatalogservice" --build "$BUILD_NAME" --branch "master" ; \
 else \ 
     echo "Pull request"; \
-    BUILD_NAME=$(date +%F_%T) && ./slcli prConfig create-bsid --app "productcatalogservice" --build "$BUILD_NAME" --targetBranch "${TARGET_BRANCH}" \    
+    ./slcli prConfig create-bsid --app "productcatalogservice" --targetBranch "${TARGET_BRANCH}" \    
         --latestCommit "${LATEST_COMMIT}" --pullRequestNumber "${PR_NUMBER}" --repositoryUrl "${TARGET_REPO_URL}"; \
 fi
 
