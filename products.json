@@ -62,9 +62,9 @@
         },
         {
             "id": "0PUK6V6EV0",
-            "name": "Buy Lukasz",
-            "description": "You can have it today.",
-            "picture": "/static/img/products/buy-lukasz.jpg",
+            "name": "Candle Holder",
+            "description": "This small but intricate candle holder is an excellent gift.",
+            "picture": "/static/img/products/candle-holder.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
                 "units": 18,
