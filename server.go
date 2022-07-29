@@ -53,7 +53,8 @@ var (
 	log          *logrus.Logger
 	extraLatency time.Duration
 
-	port = "3550"
+	port     = "3550"
+	httpPort = "3552"
 
 	reloadCatalog bool
 )
@@ -164,8 +165,15 @@ func main() {
 		port = os.Getenv("PORT")
 	}
 	log.Infof("starting grpc server at :%s", port)
-	run(port)
+	go run(port)
 	select {}
+
+	if os.Getenv("HTTP_PORT") != "" {
+		httpPort = os.Getenv("HTTP_PORT")
+	}
+	log.Infof("starting http server at :%s", httpPort)
+
+	runHttpServer(httpPort)
 }
 
 func run(port string) string {
