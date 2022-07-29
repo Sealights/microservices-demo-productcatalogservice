@@ -166,14 +166,15 @@ func main() {
 	}
 	log.Infof("starting grpc server at :%s", port)
 	go run(port)
-	select {}
 
 	if os.Getenv("HTTP_PORT") != "" {
 		httpPort = os.Getenv("HTTP_PORT")
 	}
 	log.Infof("starting http server at :%s", httpPort)
 
-	runHttpServer(httpPort)
+	go runHttpServer(httpPort)
+
+	select {}
 }
 
 func run(port string) string {
