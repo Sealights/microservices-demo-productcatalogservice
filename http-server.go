@@ -12,7 +12,7 @@ import (
 func runHttpServer(port string) {
 	http.Handle("/listproducts", otelhttp.NewHandler(http.HandlerFunc(ListProducts), "ListProducts"))
 
-	err := http.ListenAndServe(fmt.Sprintf("%s", port), nil)
+	err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 	if err != nil {
 		log.Fatalf("failed to http serve: %v", err)
 	}
